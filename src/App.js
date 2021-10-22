@@ -1,7 +1,21 @@
+import Colors from "./components/Colors";
+
 function App() {
   return (
-    <div className="App">
-      <h1>Color Palette</h1>
+    <div className="app__container">
+      <h1 className="app__title">Color Palette</h1>
+      <div className="color__selector--container">
+        <form className="color__input--form">
+          <input
+            type="text"
+            placeholder="Enter a color"
+            className="color__input"
+          />
+          <button className="btn submit-btn">Submit</button>
+        </form>
+        <button className="btn randomize-btn">Random Color</button>
+      </div>
+      <Colors />
     </div>
   );
 }

@@ -51,21 +51,29 @@ body {
   width: 300px;
   padding: 1rem;
   margin: 1rem;
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(100px, max-content));
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .color__input {
   width: 150px;
   border: none;
   outline: none;
   border-radius: 10px;
-  padding: 0 0.5rem;
+  padding: 0.5rem;
   box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
 
 }
 .color__input:focus {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+@media screen and (max-width: 450px){
+  .color__selector--container {
+    flex-direction: column;
+  }
+  .randomize-btn {
+    width: 90%;
+  }
 }
 .colors__container {
   background-color: #fff;
@@ -95,3 +103,4 @@ body {
 .color__container:active {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
+

@@ -29,11 +29,12 @@ function App() {
       setLightList(lighterColorsArray());
       setDarkList(darkerColorsArray());
     } else {
-      alert("That is not the right color");
+      alert("Check the input, fool!");
       setInput("#");
       setCurrentColor("#");
     }
   };
+
   //Inline styling variables
   const borderColor = {
     border: `3px solid #${inputError ? "ff0000" : "00ff00"}`,
@@ -58,7 +59,7 @@ function App() {
     }
     return rgb;
   };
-
+  //Create Arrays of tints
   const lighterColorsArray = () => {
     const RGB = hexToRgb(input);
     console.log(RGB);
@@ -88,6 +89,8 @@ function App() {
     }
     return lightArray.reverse();
   };
+
+  //Create Arrays of shades
 
   const darkerColorsArray = () => {
     const RGB = hexToRgb(input);
@@ -136,7 +139,11 @@ function App() {
         </form>
         <button className="btn randomize-btn">Random Color</button>
       </div>
-      <Colors lightList={lightList} darkList={darkList} originalColor={currentColor}/>
+      <Colors
+        lightList={lightList}
+        darkList={darkList}
+        originalColor={currentColor}
+      />
     </div>
   );
 }

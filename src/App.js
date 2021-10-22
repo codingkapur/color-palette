@@ -8,7 +8,7 @@ function App() {
         <form className="color__input--form">
           <input
             type="text"
-            placeholder="Enter a color"
+            placeholder="Enter Hex Value"
             className="color__input"
           />
           <button className="btn submit-btn">Submit</button>

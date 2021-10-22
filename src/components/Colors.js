@@ -1,94 +1,26 @@
 import React from "react";
+import LightColors from "./LightColors";
+import DarkColors from "./DarkColors";
 
-const Colors = () => {
-    return (
-        <div className="colors__container">
-        <div className="color__container">
-            <p className="color__intensity">100%</p>
-            <p className="color__title">#123</p>
-        </div>
-        <div className="color__container">
-            <p className="color__intensity">100%</p>
-            <p className="color__title">#123</p>
-        </div>
-        <div className="color__container">
-            <p className="color__intensity">100%</p>
-            <p className="color__title">#123</p>
-        </div>
-        <div className="color__container">
-            <p className="color__intensity">100%</p>
-            <p className="color__title">#123</p>
-        </div>
-        <div className="color__container">
-            <p className="color__intensity">100%</p>
-            <p className="color__title">#123</p>
-        </div>
-        <div className="color__container">
-            <p className="color__intensity">100%</p>
-            <p className="color__title">#123</p>
-        </div>
-        <div className="color__container">
-            <p className="color__intensity">100%</p>
-            <p className="color__title">#123</p>
-        </div>
-        <div className="color__container">
-            <p className="color__intensity">100%</p>
-            <p className="color__title">#123</p>
-        </div>
-        <div className="color__container">
-            <p className="color__intensity">100%</p>
-            <p className="color__title">#123</p>
-        </div>
-        <div className="color__container">
-            <p className="color__intensity">100%</p>
-            <p className="color__title">#123</p>
-        </div>
-        <div className="color__container">
-            <p className="color__intensity">100%</p>
-            <p className="color__title">#123</p>
-        </div>
-        <div className="color__container">
-            <p className="color__intensity">100%</p>
-            <p className="color__title">#123</p>
-        </div>
-        <div className="color__container">
-            <p className="color__intensity">100%</p>
-            <p className="color__title">#123</p>
-        </div>
-        <div className="color__container">
-            <p className="color__intensity">100%</p>
-            <p className="color__title">#123</p>
-        </div>
-        <div className="color__container">
-            <p className="color__intensity">100%</p>
-            <p className="color__title">#123</p>
-        </div>
-        <div className="color__container">
-            <p className="color__intensity">100%</p>
-            <p className="color__title">#123</p>
-        </div>
-        <div className="color__container">
-            <p className="color__intensity">100%</p>
-            <p className="color__title">#123</p>
-        </div>
-        <div className="color__container">
-            <p className="color__intensity">100%</p>
-            <p className="color__title">#123</p>
-        </div>
-        <div className="color__container">
-            <p className="color__intensity">100%</p>
-            <p className="color__title">#123</p>
-        </div>
-        <div className="color__container">
-            <p className="color__intensity">100%</p>
-            <p className="color__title">#123</p>
-        </div>
-        <div className="color__container">
-            <p className="color__intensity">100%</p>
-            <p className="color__title">#123</p>
-        </div>
-       </div>
-    )
-}
+const Colors = ({ lightList, darkList, originalColor }) => {
+    const backgroundColor = {
+        backgroundColor: originalColor,
+        boxShadow: "0px 10px 5px rgba(0,0,0,0.5)"
+      };
+  return (
+    <div className="colors__container">
+      {lightList.map((x, index) => {
+        return <LightColors color={x} key={index} />;
+      })}
+      <div className="color__container" style={backgroundColor}>
+        <p className="color__intensity">Original Color</p>
+        <p className="color__title">{originalColor}</p>
+      </div>
+      {darkList.map((x, index) => {
+        return <DarkColors color={x} key={index} />;
+      })}
+    </div>
+  );
+};
 
 export default Colors;

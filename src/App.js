@@ -3,7 +3,7 @@ import Colors from "./components/Colors";
 
 function App() {
   //State Values
-  const [currentColor, setCurrentColor] = useState("#aaccde");
+  const [currentColor, setCurrentColor] = useState("#1266CF");
   const [input, setInput] = useState("");
   const [inputError, setInputError] = useState(true);
   const [lightList, setLightList] = useState([]);

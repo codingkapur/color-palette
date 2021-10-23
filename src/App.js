@@ -82,6 +82,11 @@ function App() {
     setDarkList(darkerColorsArray());
   };
 
+  const clickToCopy = (colorHex) => {
+    const color = `#${colorHex}`;
+    navigator.clipboard.writeText(color)
+  }
+
   //Create Arrays of tints
   const lighterColorsArray = () => {
     const RGB = hexToRgb(input);
@@ -168,6 +173,7 @@ function App() {
         darkList={darkList}
         originalColor={currentColor}
         rgbToHex={rgbToHex}
+        clickToCopy={clickToCopy}
       />
     </div>
   );

@@ -71,6 +71,7 @@ body {
 @media screen and (max-width: 450px){
   .color__selector--container {
     flex-direction: column;
+    margin-bottom: 1rem;
   }
   .randomize-btn {
     width: 90%;

@@ -14,7 +14,7 @@ const Colors = ({ lightList, darkList, originalColor }) => {
       })}
       <div className="color__container" style={backgroundColor}>
         <p className="color__intensity">Original Color</p>
-        <p className="color__title">{originalColor}</p>
+        <p className="color__title">{originalColor.toUpperCase()}</p>
       </div>
       {darkList.map((x, index) => {
         return <DarkColors color={x} key={index} />;

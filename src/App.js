@@ -2,6 +2,7 @@ import { useState } from "react";
 import Colors from "./components/Colors";
 
 function App() {
+  //State Values
   const [currentColor, setCurrentColor] = useState("#aaccde");
   const [input, setInput] = useState("");
   const [inputError, setInputError] = useState(true);
@@ -37,7 +38,7 @@ function App() {
 
   //Inline styling variables
   const borderColor = {
-    border: `3px solid #${inputError ? "ff0000" : "00ff00"}`,
+    borderBottom: `3px solid #${inputError ? "ff0000" : "00ff00"}`,
   };
   const backgroundColor = {
     backgroundColor: `${currentColor}`,
@@ -59,10 +60,33 @@ function App() {
     }
     return rgb;
   };
+
+  const rgbToHex = (rgb) => {
+    const hexArr = [];
+    for (let i = 0; i < 3; i++) {
+      hexArr.push(parseInt(rgb[i]).toString(16));
+    }
+    return hexArr.join("").toUpperCase();
+  };
+
+  const randomizeColor = () => {
+    const rgb = [];
+    for (let i = 0; i < 3; i++) {
+      rgb.push(Math.ceil(Math.random() * 255));
+    }
+    const hex = rgbToHex(rgb);
+    setInput(hex.padStart(7, "#"));
+    setInputError(false);
+
+    setCurrentColor(input);
+    setLightList(lighterColorsArray());
+    setDarkList(darkerColorsArray());
+  };
+
   //Create Arrays of tints
   const lighterColorsArray = () => {
     const RGB = hexToRgb(input);
-    console.log(RGB);
+    // console.log(RGB);
     const lightArray = [];
 
     let i = 10;
@@ -91,7 +115,6 @@ function App() {
   };
 
   //Create Arrays of shades
-
   const darkerColorsArray = () => {
     const RGB = hexToRgb(input);
     console.log(RGB);
@@ -137,7 +160,9 @@ function App() {
           />
           <button className="btn submit-btn">Submit</button>
         </form>
-        <button className="btn randomize-btn">Random Color</button>
+        <button className="btn randomize-btn" onClick={() => randomizeColor()}>
+          Random Color
+        </button>
       </div>
       <Colors
         lightList={lightList}

@@ -13,14 +13,16 @@ Node version: Node 14
 3. run command 'npm start'
 
 ## Problems presented in this app
-1. How to validate input for a Hexadecimal color
-2. How to change border of input as validation takes place before submit.
-3. How to programmatically change the intensity of a Hexadecimal color.
-4. How to dynamically generate a grid of tints and shades of the input color.
-5. How to implement a random color.
+1. How to validate input for a Hexadecimal color - Done
+2. How to change border of input as validation takes place before submit. - Done
+3. How to programmatically change the intensity of a Hexadecimal color - Done
+4. How to dynamically generate a grid of tints and shades of the input color - Done
+5. How to implement a random color - Done
+6. How to implement Click to Copy functionality - Done
 
-
+--------------------------------------------------------------------
 Validation of Hex Color Input:
+--------------------------------------------------------------------
 regex = "^#([A-Fa-f0-9]{6})$";
 Where: 
     ^ represents the starting of the string.
@@ -34,9 +36,9 @@ Returns true if the string matches with the given regex, else returns false.
 const regex = new RegExp('^#([A-Fa-f0-9]{6})$')
 regex.test(stringToBeTested) 
 
-
-
+--------------------------------------------------------------------
 Programmatically change the intensity of color:
+--------------------------------------------------------------------
 First convery HEX to RGB
 For lighter shades, increase 10% from every color space(R,G,B). Check at every level if resulting number is 255 or greater.
 For darker shades, decrease 10% from every color space(R,G,B). Check at every level if resulting number is 0 or less. 
@@ -60,4 +62,7 @@ Keep track of increments in percent as well.
 
 3. Additional Input
 
-
+--------------------------------------------------------------------
+## Features to Add
+1. Display values in RGB, Hex or HSL. -> Dropdown menu
+2. Add a color picker pop up button.

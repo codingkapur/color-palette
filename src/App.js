@@ -167,6 +167,7 @@ function App() {
         lightList={lightList}
         darkList={darkList}
         originalColor={currentColor}
+        rgbToHex={rgbToHex}
       />
     </div>
   );

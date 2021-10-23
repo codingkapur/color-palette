@@ -98,7 +98,24 @@ body {
   border-radius: 5px;
   box-shadow: 10px 10px 10px #00000046, -10px -10px 10px #ffffff46;
   cursor: pointer;
+  position: relative;
 }
+.color__container:hover.color__container::after {
+  content: '[Click to Copy]';
+  position: absolute;
+  top: 10%;;
+  left: 50%;
+  transform: translate(-32%,0);
+  font-size: 0.8rem;
+  width: 100%;
+  margin: 0 auto;
+  color: rgb(255, 255, 255);
+}
+.color__container:active.color__container::after {
+  content: 'Copied!';
+
+}
+
 .color__container:hover {
   box-shadow: 0 10px 5px rgba(0, 0, 0, 0.405);
 }

@@ -64,7 +64,7 @@ function App() {
   const rgbToHex = (rgb) => {
     const hexArr = [];
     for (let i = 0; i < 3; i++) {
-      hexArr.push(parseInt(rgb[i]).toString(16));
+      hexArr.push(parseInt(rgb[i]).toString(16).padStart(2, '0'));
     }
     return hexArr.join("").toUpperCase();
   };
@@ -77,7 +77,6 @@ function App() {
     const hex = rgbToHex(rgb);
     setInput(hex.padStart(7, "#"));
     setInputError(false);
-
     setCurrentColor(input);
     setLightList(lighterColorsArray());
     setDarkList(darkerColorsArray());

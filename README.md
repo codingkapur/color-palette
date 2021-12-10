@@ -46,7 +46,7 @@ Keep track of increments in percent as well.
 
 ## ISSUES SO FAR:
 
-1. When we click on random color, the first click has an undesired behavior. On the second click and ahead, it works fine. To be fixed!
+1. When we click on random color, the first click only updates the input vale. On the second click, it implements the color value previously displayed in the input, and generates another one. To be fixed!
 
 2. On every click on the random color button, the color created randomly is printed to the console in RGB format. After every few clicks, it can be observed that in the Red color space, NaN is the value. It appears only in the red color space even though the logic for generating the number for each color space is the same. FIXED! (Issue revealed - padStart pads the value with # and if the red space value is single digit, it adds an extra # which is why it says NaN. )
 

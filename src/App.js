@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Colors from "./components/Colors";
 
 function App() {
@@ -64,7 +64,7 @@ function App() {
   const rgbToHex = (rgb) => {
     const hexArr = [];
     for (let i = 0; i < 3; i++) {
-      hexArr.push(parseInt(rgb[i]).toString(16).padStart(2, '0'));
+      hexArr.push(parseInt(rgb[i]).toString(16).padStart(2, "0"));
     }
     return hexArr.join("").toUpperCase();
   };
@@ -75,17 +75,15 @@ function App() {
       rgb.push(Math.ceil(Math.random() * 255));
     }
     const hex = rgbToHex(rgb);
-    setInput(hex.padStart(7, "#"));
-    setInputError(false);
-    setCurrentColor(input);
+    validateInput(hex.padStart(7, "#"));
+    // setInputError(false);
+    setCurrentColor(()=>input);
     setLightList(lighterColorsArray());
     setDarkList(darkerColorsArray());
   };
-
   const clickToCopy = (colorHex) => {
-    const color = `#${colorHex}`;
-    navigator.clipboard.writeText(color)
-  }
+    navigator.clipboard.writeText(`#${colorHex}`);
+  };
 
   //Create Arrays of tints
   const lighterColorsArray = () => {
@@ -164,7 +162,7 @@ function App() {
           />
           <button className="btn submit-btn">Submit</button>
         </form>
-        <button className="btn randomize-btn" onClick={() => randomizeColor()}>
+        <button className="btn randomize-btn" onClick={randomizeColor}>
           Random Color
         </button>
       </div>
